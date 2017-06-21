@@ -1,0 +1,48 @@
+<div fxLayout="row">
+    <div fxFlex="20" fxFlexOffset="5">
+        <h3>Other players</h3>
+        <p>Player1 1000$</p>
+        <p>Player2 1000$</p>
+        <p>Player3 1000$</p>
+        <p>Player4 1000$</p>
+        <p>Player5 1000$</p>
+    </div>
+
+    <div fxFlex>
+        <h3>Ket qua luot quay</h3>
+        <div>
+            <dice-design-progress></dice-design-progress>
+        </div>
+        <h3>Ban dat</h3>
+        <md-grid-list cols="3">
+            <md-grid-tile>
+                <div class="bet-plate deer" (click)="openBetDialog(0)">
+                    <div class="bet-money">2000</div>
+                </div>
+            </md-grid-tile>
+            <md-grid-tile>
+                <div class="bet-plate gourd" (click)="openBetDialog(1)">
+                    <div class="bet-money">500</div>
+                </div>
+            </md-grid-tile>
+            <md-grid-tile>
+                <div class="bet-plate chicken" (click)="openBetDialog(2)">
+                </div>
+            </md-grid-tile>
+            <md-grid-tile>
+                <div class="bet-plate fish" (click)="openBetDialog(3)">
+                </div>
+            </md-grid-tile>
+            <md-grid-tile>
+                <div class="bet-plate crab" (click)="openBetDialog(4)">
+                </div>
+            </md-grid-tile>
+            <md-grid-tile>
+                <div class="bet-plate shrimp" (click)="openBetDialog(5)">
+                </div>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+    <div fxFlex="20" fxFlexOffset="5"></div>
+</div>
+<div>&nbsp;</div>

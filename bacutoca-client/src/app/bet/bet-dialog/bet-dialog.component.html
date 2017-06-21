@@ -1,0 +1,21 @@
+<h3 md-dialog-title>
+    Bet Amount</h3>
+<div md-dialog-content>
+    <div fxLayout>
+        <div fxFlex>
+            <img src="/assets/{{betIconic}}.jpg" width="150" height="150" />
+        </div>
+        <div fxFlex>
+            <form #betForm="ngForm">
+                <md-input-container>
+                    <input [(ngModel)]="betAmount" name="betAmount" mdInput #amount="ngModel" type="number" required placeholder="Bet Amount"/>
+                    <md-error [hidden]="amount.valid">Required</md-error>
+                </md-input-container>
+            </form>
+        </div>
+    </div>
+</div>
+<div md-dialog-actions>
+    <button md-raised-button [disabled]="!betForm.form.valid" (click)="bet()">Bet</button>
+    <button md-raised-button (click)="cancel()">Cancel</button>
+</div>

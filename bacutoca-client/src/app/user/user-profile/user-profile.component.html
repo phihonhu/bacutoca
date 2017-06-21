@@ -1,0 +1,36 @@
+<div fxLayout="row">
+  <div fxFlex="20">User Name</div>
+  <div fxFlex="30">{{currentUser.username}}</div>
+</div>
+
+<div fxLayout="row">
+  <div fxFlex="20">Balance</div>
+  <div fxFlex="30">{{currentUser.balance | currency:'USD':true:'1.2-2'}}</div>
+</div>
+<div fxLayout="row">
+  <div fxFlex="20">
+    <button md-raised-button (click)='updateBalance()'>Buy Credit</button>
+  </div>
+</div>
+<br>
+<div fxLayout="row">
+  <div fxFlex>YOUR BETTING HISTORY</div>
+</div>
+<br>
+<div *ngIf="isExistingBet">
+  <div fxLayout="row" class="bet-history-header">
+    <div fxFlex="20">Game</div>
+    <div fxFlex="15">Round</div>
+    <div fxFlex="10">Bet</div>
+    <div fxFlex="15">Bet amount</div>
+    <div fxFlex="10">Win</div>
+  </div>
+  <div fxLayout="row" *ngFor="let bet of bettingHistory" class="bet-history-data">
+    <div fxFlex="20">{{bet.game}}</div>
+    <div fxFlex="15">{{bet.round}}</div>
+    <div fxFlex="10">{{parseIconic(bet.betIconic)}}</div>
+    <div fxFlex="15">{{bet.betAmount | currency:'USD':true:'1.0-2'}}</div>
+    <div fxFlex="10">{{bet.win | currency:'USD':true:'1.0-2'}}</div>
+  </div>
+</div>
+<div fxLayoutAlign="center center" style="color:yellowgreen;" *ngIf="!isExistingBet">There is no betting.</div>

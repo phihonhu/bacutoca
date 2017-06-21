@@ -1,0 +1,8 @@
+<md-sidenav #sidenav mode="side" opened="true" class="app-sidenav">
+  <h2>Players</h2>
+  <md-list>
+    <md-list-item *ngFor="let user of players">
+      <app-user-tile [user]=user></app-user-tile>
+    </md-list-item>   
+  </md-list>
+</md-sidenav>

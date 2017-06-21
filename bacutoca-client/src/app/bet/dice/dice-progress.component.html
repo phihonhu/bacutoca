@@ -1,0 +1,14 @@
+<div class="dice-progress" fxLayoutAlign="center center" fxLayout="row" *ngIf="resultDices">
+    <div fxFlex></div>
+    <div fxFlex="20" fxLayoutAlign="center center">
+        <dice [isRotate]="isRolling" [resultIconic]="resultDices[0]"></dice>
+    </div>
+    <div fxFlex="20" fxLayoutAlign="center center">
+        <dice [isRotate]="isRolling" [resultIconic]="resultDices[1]"></dice>
+    </div>
+    <div fxFlex="20" fxLayoutAlign="center center">
+        <dice [isRotate]="isRolling" [resultIconic]="resultDices[2]"></dice>
+    </div>
+    <div fxFlex></div>
+</div>
+

@@ -1,0 +1,16 @@
+<div fxLayout="row">
+  <div fxFlex fxLayoutAlign="start start">
+    <span style="cursor: pointer" routerLink="/">Home</span>
+  </div>
+  <div fxFlex fxLayoutAlign="end end" *ngIf="loggedInUser">
+    Welcome {{loggedInUser.username}}. My balance: <span style="color:red">&nbsp;{{loggedInUser.balance | currency:'USD':true:'1.2-2'}}</span>&nbsp;|&nbsp;
+    <span style="cursor: pointer" routerLink="/bet">My Bet Table </span>&nbsp;|&nbsp;
+    <span style="cursor: pointer" routerLink="/profile">My Account </span>&nbsp;|&nbsp;
+    <span (click)="logOut()" style="cursor: pointer"> Log Out</span>
+  </div>
+
+  <div fxFlex fxLayoutAlign="end end" *ngIf="!loggedInUser">
+    <span style="cursor: pointer" routerLink="/register" style="cursor: pointer"> Log In</span>
+  </div>
+
+</div>

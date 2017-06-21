@@ -1,0 +1,52 @@
+<div fxLayout="row">
+    <div fxFlex>
+        <div fxLayout="row">
+            <div fxFlex><h2>You are in the room {{currentGame?.name}}</h2></div>                                    
+        </div>               
+    </div>    
+    <div fxFlex fxLayoutAlign="center center"><h2>{{currentRound?.name}}</h2></div>    
+    <div fxFlex fxLayoutAlign="end center"><countdown-timer (onTimeoutEvent)="onTimeout()" [prefixText]="'Game starts in'" [endTime]="currentGame?.endTime"></countdown-timer></div>                    
+</div>
+<div fxLayout="row">
+    <div fxFlex fxLayoutAlign="end center"><button md-button style="width: 100px;" (click)='leaveGame(currentGame)'>Leave</button></div>
+</div>
+<div *ngIf="isGameMaster">
+<div fxLayout="row">    
+    <div fxFlex fxLayoutAlign="end center" style="padding-top: 10px;"><button md-button style="width: 100px;" (click)='newRound(currentGame)'>New round</button></div>    
+</div>    
+<div *ngIf="!isFinishedRound" fxLayout="row">        
+    <div fxFlex fxLayoutAlign="end center" style="padding-top: 10px;"><button md-button style="width: 100px;" (click)='makeRoundResult(currentRound)'>Go</button></div>
+</div>    
+</div>
+
+<div fxLayout="row">
+    <app-player-list *ngIf="currentGame" [gameId]="currentGame?.id"></app-player-list>
+    <div fxFlex>
+        <h3>Result</h3><button (click)="handleDiceProcess($event)">Handle dices</button>
+        <div>
+            <dice-progress [resultDices]="currentGame?.result" [isRolling]="isRolling"></dice-progress>
+        </div>
+        <h3>Bet Plate</h3>
+        <md-grid-list cols="3">
+             <md-grid-tile>
+                <bet-cell class="bet-plate"  (clickIconic)="onCellClicked($event)" [iconic]="0" [amount]="placedBets[0]"></bet-cell>
+            </md-grid-tile>
+            <md-grid-tile>
+                <bet-cell class="bet-plate"  (clickIconic)="onCellClicked($event)" [iconic]="1" [amount]="placedBets[1]"></bet-cell>
+            </md-grid-tile>
+            <md-grid-tile>
+                <bet-cell class="bet-plate"  (clickIconic)="onCellClicked($event)" [iconic]="2" [amount]="placedBets[2]"></bet-cell>
+            </md-grid-tile>
+            <md-grid-tile>
+                <bet-cell class="bet-plate"  (clickIconic)="onCellClicked($event)" [iconic]="3" [amount]="placedBets[3]"></bet-cell>
+            </md-grid-tile>
+            <md-grid-tile>
+                <bet-cell class="bet-plate"  (clickIconic)="onCellClicked($event)" [iconic]="4" [amount]="placedBets[4]"></bet-cell>
+            </md-grid-tile>
+            <md-grid-tile>
+                <bet-cell class="bet-plate"  (clickIconic)="onCellClicked($event)" [iconic]="5" [amount]="placedBets[5]"></bet-cell>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+    <div fxFlex="10" fxFlexOffset="5"></div>
+</div>

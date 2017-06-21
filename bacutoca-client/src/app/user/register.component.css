@@ -1,0 +1,51 @@
+.register-label {
+    color: white;
+    font-size: 15px;
+    padding-right: 12px;
+}
+
+.register-error {
+    color: red;
+    font-size: 13px;
+    padding-right: 0px;
+    padding-top: 20px;
+}
+
+.login-panel {
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+/*
+.devider {
+    display: flex;
+    margin: 0 20px;
+    align-items: center;
+    color: #fff;
+}
+
+.devider::after, .devider::before {
+    background-color: #fff;
+    margin: 0 auto;
+    width: 1px;
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 10px 10px;
+}*/
+
+button {
+    width: 100%;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #424242 inset !important;
+    box-shadow: 0 0 0px 1000px #424242 inset !important;
+    -webkit-text-fill-color: #fff !important;
+}
+.register-form {
+    margin-top: 50px;
+}

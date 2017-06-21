@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+body {
+    background-image: url('/assets/body-bg.png');
+    color: white;
+    margin: 0;
+    font-family: 'Righteous', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mat-dialog-container {
+    background-image: url('/assets/dialog-bg.png');
+    * {
+        color: black;
+    }
+}
+
+.logout {                            
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.mat-button, .mat-icon-button, .mat-raised-button {
+    color: white;
+  
+    background-color: gray;
+}
+

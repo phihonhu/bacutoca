@@ -1,0 +1,86 @@
+<!--<md-tab-group>
+    <md-tab-group>
+        <md-tab label="Login">
+            Content 1
+        </md-tab>
+        <md-tab label="Signup">
+            Content 2
+        </md-tab>
+    </md-tab-group>
+</md-tab-group>-->
+<!--<div class="login-panel">-->
+
+<div fxFlex class="register-form" fxLayoutAlign="center center">
+    <md-card fxFlex.lt-md="100" fxFlex="35">
+        <md-tab-group [dynamicHeight]="true">
+            <md-tab>
+                <template md-tab-label>Login</template>
+                <div fxFlex fxLayout="column" fxLayoutAlign="center center">
+                    <h5>Please login to continue</h5>
+                    <div><label class="register-error">{{resultMessage}}</label></div>
+                    <form fxLayout="column">
+                        <md-input-container>
+                            <input autocomplete="off" autoFocus mdInput name="username" placeholder="Username" [(ngModel)]="username" ng-required>
+                        </md-input-container>
+                        <md-input-container>
+                            <input name="password" mdInput type="password" (keydown)="keyDownFunction($event)" placeholder="Password" [(ngModel)]="password"
+                                ng-required>
+                        </md-input-container>
+                        <button md-raised-button (click)='login()'>LOGIN</button>
+
+                    </form>
+                </div>
+            </md-tab>
+            <md-tab fxFlex>
+                <template md-tab-label>Signup</template>
+                <div fxFlex fxLayout="column" fxLayoutAlign="center center">
+                    <h5>Join our millionare club for free</h5>
+                    <div><label class="register-error">{{registerResultMessage}}</label></div>
+                    <form fxLayout="column">
+                        <md-input-container>
+                            <input autocomplete="off" mdInput name="reg_username" placeholder="Username" [(ngModel)]="reg_username" ng-required>
+                        </md-input-container>
+                        <md-input-container>
+                            <input name="reg_password" mdInput type="password" (keydown)="keyDownFunction($event)" placeholder="Password" [(ngModel)]="reg_password"
+                                ng-required>
+                        </md-input-container>
+                        <button md-raised-button (click)='register()'>Register</button>
+                    </form>
+                </div>
+            </md-tab>
+        </md-tab-group>
+        <!--<div fxFlex="45">
+            <h5>Have an account? Please login to continue</h5>
+            <div><label class="register-error">{{resultMessage}}</label></div>
+            <form div #loginForm="ngForm">
+                <md-input-container class="register-textbox">
+                    <input autoFocus mdInput name="username" placeholder="Your name" [(ngModel)]="username" ng-required>
+                </md-input-container>
+                <br>
+                <md-input-container class="password-textbox">
+                    <input name="password" mdInput type="password" (keydown)="keyDownFunction($event)" placeholder="Password" [(ngModel)]="password"
+                        readonly onfocus="this.removeAttribute('readonly');" ng-required>
+                </md-input-container>
+            </form>
+            <button md-raised-button (click)='login()'>LOGIN</button>
+        </div>
+        <div fxLayout="column" class="devider">
+            Or
+        </div>
+        <div fxFlex="45">
+            <h5>Join our millionare club for free</h5>
+            <div><label class="register-error">{{registerResultMessage}}</label></div>
+            <form div #registerForm="ngForm">
+                <md-input-container class="register-textbox">
+                    <input autoFocus mdInput name="username" placeholder="Your name" [(ngModel)]="reg_username" ng-required>
+                </md-input-container>
+                <br>
+                <md-input-container class="password-textbox">
+                    <input name="password" mdInput type="password" (keydown)="keyDownFunction($event)" placeholder="Password" [(ngModel)]="reg_password"
+                        readonly onfocus="this.removeAttribute('readonly');" ng-required>
+                </md-input-container>
+            </form>
+            <button md-raised-button (click)='register()'>Register</button>
+        </div>-->
+    </md-card>
+</div>

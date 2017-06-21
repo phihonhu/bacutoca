@@ -1,0 +1,119 @@
+.diceContainer
+{
+	width: 100px;
+	height: 100px;
+
+	margin: auto;
+
+	perspective: 500px;
+	-webkit-perspective: 500px;
+}
+
+.diceRotate
+{
+	transform-style: preserve-3d;
+	animation: diceRotate 1s infinite linear;
+
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation: diceRotate 1s infinite linear;
+}
+
+.diceCube .diceSide
+{
+	position: absolute;
+
+	width: 98px;
+	height: 98px;
+
+	opacity: 0.9;
+
+	background-size: 98px 98px;
+	background-repeat:no-repeat;
+
+  	border: 1px solid #000;
+
+	&.shrimp {
+		background-image: url('/assets/shrimp.jpg');
+	}
+
+	&.chicken {
+		background-image: url('/assets/chicken.jpg');
+	}
+
+	&.crab {
+		background-image: url('/assets/crab.jpg');
+	}
+
+	&.fish {
+		background-image: url('/assets/fish.jpg');
+	}
+
+	&.deer {
+		background-image: url('/assets/deer.jpg');
+	}
+
+	&.gourd {
+		background-image: url('/assets/gourd.jpg');
+	}
+}
+
+.diceCube .diceSide.diceFront
+{	
+  	transform: rotateY(0deg) translateZ(50px);
+	-webkit-transform: rotateY(0deg) translateZ(50px);
+}
+
+.diceCube .diceSide.diceBack
+{
+	transform: rotateY(180deg) translateZ(50px);
+	-webkit-transform: rotateY(180deg) translateZ(50px);
+}
+
+.diceCube .diceSide.diceRight
+{
+	transform: rotateY(90deg) translateZ(50px);
+	-webkit-transform: rotateY(90deg) translateZ(50px);	
+}
+.diceCube .diceSide.diceLeft
+{	
+	transform: rotateY(-90deg) translateZ(50px);
+	-webkit-transform: rotateY(-90deg) translateZ(50px);
+}
+
+.diceCube .diceSide.diceTop
+{
+	transform: rotateY(90deg) rotateX(90deg) translateZ(50px);
+	-webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(50px);
+}
+
+.diceCube .diceSide.diceBottom
+{
+	transform: rotateY(-90deg) rotateX(270deg) translateZ(50px);
+	-webkit-transform: rotateY(-90deg) rotateX(270deg) translateZ(50px);
+
+ 	box-shadow: 0px 0px 50px #000;
+}
+
+@keyframes diceRotate
+{
+	0%
+	{
+		transform: rotateY(0deg);
+	}
+	100%
+	{
+		transform: rotateY(360deg);
+	}
+}
+
+@-webkit-keyframes diceRotate
+{
+	0%
+	{
+		-webkit-transform: rotateY(0deg);
+	}
+	100%
+	{
+		-webkit-transform: rotateY(360deg);
+	}
+}

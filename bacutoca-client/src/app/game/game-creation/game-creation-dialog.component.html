@@ -1,0 +1,13 @@
+<h3 md-dialog-title>Create New Game</h3>
+<div md-dialog-content>
+  <form #gameCreationForm="ngForm">
+    <md-input-container>
+      <input mdInput [(ngModel)]="gameName" name="gameName" required #name="ngModel" placeholder="Game Name" />
+      <md-error [hidden]="name.valid">Required</md-error>
+    </md-input-container>
+  </form>
+</div>
+<div md-dialog-actions>
+  <button md-raised-button (click)="createGame()" [disabled]="!gameCreationForm.form.valid">Create</button>
+  <button md-raised-button (click)="cancel()">Cancel</button>
+</div>

@@ -1,0 +1,126 @@
+$cyan: #60daaa;
+$yellow: #fbca67;
+$orange: #ff8a30;
+$red: #f45e61;
+$purple: #6477b9;
+$blue: #0eb7da;
+
+$bet-cell-width: 200px;
+$bet-cell-height: 200px;
+$selected-bet-cell-border: 6px;
+
+.bet-cell {
+    background-repeat: no-repeat;
+    background-size: contain;
+    // width: $bet-cell-width;
+    // height: $bet-cell-height;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &::before, &::after {
+        // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+        border: 4px solid transparent;
+        box-sizing: inherit;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;        
+    }
+
+    // This covers the top & right borders (expands right, then down)
+    &::before {
+        top: 0;
+        left: -0.5em;
+    }
+
+    // And this the bottom & left borders (expands left, then up)
+    &::after {
+        bottom: 0;
+        right: -0.5em;
+    }
+    &.selected {
+        // width: $bet-cell-width - $selected-bet-cell-border;
+        // height: $bet-cell-height - $selected-bet-cell-border;
+        // border: $selected-bet-cell-border solid red;
+
+        &::before {
+            -webkit-animation:  border-before 2s infinite;
+            animation:  border-before 2 infinite;
+        }
+
+        &::after {
+            -webkit-animation: border-after 2s infinite;
+            animation: border-after 2s infinite;
+        }
+    }    
+
+    .bet-money {
+        position: absolute;
+        bottom: 35%;
+        left: 35%;
+        right: 0;
+        font-size: 60pt;
+    }
+    &.shrimp {
+        background-image: url('/assets/shrimp.jpg');
+    }
+    &.gourd {
+        background-image: url('/assets/gourd.jpg');
+    }
+    &.fish {
+        background-image: url('/assets/fish.jpg');
+    }
+    &.chicken {
+        background-image: url('/assets/chicken.jpg');
+    }
+    &.crab {
+        background-image: url('/assets/crab.jpg');
+    }
+    &.deer {
+        background-image: url('/assets/deer.jpg');
+    }
+}
+
+
+@keyframes border-before {
+  0% { 
+      width: 0%;
+      height: 0%;
+      border-top-color: $purple; // Make borders visible
+      border-right-color: $purple;    
+  }
+  50% { 
+      width: 100%;
+      height: 0%;
+      border-top-color: $purple; // Make borders visible
+      border-right-color: $purple;    
+  }
+  100% {
+      width: 100%;
+      height: 100%;
+      border-top-color: $purple; // Make borders visible
+      border-right-color: $purple;
+  }
+}
+
+@keyframes border-after {
+  0% { 
+      width: 0%;
+      height: 0%;
+      border-bottom-color: $purple; // Make borders visible
+      border-left-color: $purple;    
+  }
+  50% { 
+      width: 100%;
+      height: 0%;
+      border-bottom-color: $purple; // Make borders visible
+      border-left-color: $purple;    
+  }
+  100% {
+      border-bottom-color: $purple; // Make borders visible
+      border-left-color: $purple;
+      width: 100%;
+      height: 100%;     
+  }
+}

@@ -1,0 +1,12 @@
+<h3 md-dialog-title>Leave game</h3>
+<div md-dialog-content>
+    <h4>Are you sure that you want to leave?</h4>
+</div>
+<div md-dialog-actions >
+  <div fxFlex>
+    <button  md-button (click)="leaveGame()" [disabled]="isProcessing">{{leaveText}}</button>
+    <button  md-button [disabled]="isProcessing" (click)="cancel()">Cancel</button>
+  </div>
+
+</div>
+

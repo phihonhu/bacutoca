@@ -1,0 +1,113 @@
+<head>
+  <link rel="stylesheet" href="http://markdowncss.github.io/splendor/css/splendor.css">
+</head>
+
+
+<body>
+  <div class="abc" style="position: fixed; bottom: 0px; left:0px">
+    <ul style="left: 0px; margin-left: 0px; list-style: none;">
+      <li><a href="#top">Top</a></li>
+      <li><a href="#register">Register</a></li>
+      <li> <a href="#login">Login</a></li>
+      <li><a href="#creategame">Create Game</a></li>
+      <li> <a href="#bacutoca">Bacutoca</a></li>
+      <li><a href="#createbetslip">Create betslip </a></li>
+    </ul>
+  </div>
+  <header id="top">
+  </header>
+  <div style="text-align: center;">
+    <img style="width:auto;" height="400px" src="https://cloud.githubusercontent.com/assets/1424573/4785631/dc5ddcd2-5d82-11e4-88a2-06fdabbe4fb8.png">
+  </div>
+  <div id="register">
+    <h3>Register</h3>
+    <pre>
+      <code class="language-js">
+      POST: /register
+      {
+        "username": "john.doe"
+      }
+</code></pre>
+  </div>
+  <div id="login">
+    <h3>Login</h3>
+    <pre><code class="language-js">
+      POST: /login
+      {
+        "username": "john.doe"
+      }
+</code></pre>
+  </div>
+
+  <div id="creategame">
+    <h3>Create game</h3>
+    <h6>Request:</h6>
+    <pre>
+      <code class="language-js">   
+      POST: /games
+      { }
+ 
+</code>
+</pre>
+    <h6> Result:</h6>
+    <pre>
+<code>
+      {
+        id: 1,
+        expiredAt: 1231422122 (timestamp in seconds)
+      }
+</code>
+</pre>
+  </div>
+
+  <div id="bacutoca">
+    <h3>Randomize game results </h3>
+    <h6>Request:</h6>
+    <pre>
+      <code class="language-js">   
+      POST: /bacutoca
+      { 
+        gameId: 1
+      }
+ 
+</code>
+</pre>
+    <h6> Result:</h6>
+    <pre>
+<code>
+      {
+          id: 1,
+          result1: 1,
+          result2: 2,
+          result3: 3,
+        }
+</code>
+</pre>
+  </div>
+  <div id="createbetslip">
+    <h3>Create bet slip</h3>
+    <h6>Request:</h6>
+    <pre>
+      <code class="language-js">   
+      POST: /games/bet
+      {
+        "gameId": 1,
+        "userId": 1,
+        "odd":2 // bau cua tom ca ga vit,...
+        "point": 200
+      }
+ 
+</code>
+</pre>
+    <h6> Result:</h6>
+    <pre>
+<code>
+     {
+        "betSlipId": 6,
+        "odd": 2,
+        "newBalance": 0
+      }
+</code>
+</pre>
+  </div>
+</body>

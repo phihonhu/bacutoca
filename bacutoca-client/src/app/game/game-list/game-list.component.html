@@ -1,0 +1,24 @@
+<div fxLayout="row">
+  <div fxFlex>
+    <h2>List of games which are online</h2>
+  </div>
+  <div fxFlex fxLayoutAlign="end center"><button md-button (click)="openGameCreationDialog()">Create Game</button></div>
+
+</div>
+
+<md-grid-list cols="7" rowHeight="200px">
+  <md-grid-tile *ngFor="let game of games">
+    <md-grid-tile-header>
+      <h2>Room: {{game.name}}</h2>
+    </md-grid-tile-header>
+    Master of Game: {{game.creator.username}}
+    <md-grid-tile-footer>
+      <div fxFlex *ngIf="!game.isJoined"><button md-button (click)='joinGame(game)'>Join Now</button> </div>
+      <div fxFlex *ngIf="game.isJoined">
+        <button md-button (click)='gotoGame(game)'>Go</button>
+        <button md-button (click)='leaveGame(game)'>Leave</button>
+      </div>
+    </md-grid-tile-footer>
+
+  </md-grid-tile>
+</md-grid-list>

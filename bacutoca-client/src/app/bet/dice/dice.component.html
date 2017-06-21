@@ -1,0 +1,20 @@
+<div *ngIf="isRotate" class="diceContainer">
+    <div class="diceCube diceRotate">
+        <div class="diceSide diceTop" [ngClass]="orderedIconics[0]"></div>
+        <div class="diceSide diceBottom" [ngClass]="orderedIconics[1]"></div>
+        <div class="diceSide diceFront" [ngClass]="orderedIconics[2]"></div>
+        <div class="diceSide diceBack" [ngClass]="orderedIconics[3]"></div>
+        <div class="diceSide diceLeft" [ngClass]="orderedIconics[4]"></div>
+        <div class="diceSide diceRight" [ngClass]="orderedIconics[5]"></div>
+    </div>
+</div>
+<div *ngIf="!isRotate" class="diceContainer">
+    <div class="diceCube diceResult">
+        <div class="diceSide diceTop" [ngClass]="resultIconic"></div>
+        <div class="diceSide diceBottom" [ngClass]="resultIconic"></div>
+        <div class="diceSide diceFront" [ngClass]="resultIconic"></div>
+        <div class="diceSide diceBack" [ngClass]="resultIconic"></div>
+        <div class="diceSide diceLeft" [ngClass]="resultIconic"></div>
+        <div class="diceSide diceRight" [ngClass]="resultIconic"></div>
+    </div>
+</div>
