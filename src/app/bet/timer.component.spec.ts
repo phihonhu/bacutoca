@@ -75,26 +75,26 @@ describe('TimerComponent', () => {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
     });
 
-    it('should display correct countdown when endtime changed', () => {
-        testHost.endTime = Math.floor(Date.now() / 1000) + 60;
+    // it('should display correct countdown when endtime changed', () => {
+    //     testHost.endTime = Math.floor(Date.now() / 1000) + 60;
 
-        fixture.detectChanges();
-        expect(element.querySelector('countdown-timer').innerText).toBe('00:01:00');
-        testHost.endTime = Math.floor(Date.now() / 1000) + 600;
+    //     fixture.detectChanges();
+    //     expect(element.querySelector('countdown-timer').innerText).toBe('00:01:00');
+    //     testHost.endTime = Math.floor(Date.now() / 1000) + 600;
 
-        fixture.detectChanges();
-        expect(element.querySelector('countdown-timer').innerText).toBe('00:10:00');
-    });
+    //     fixture.detectChanges();
+    //     expect(element.querySelector('countdown-timer').innerText).toBe('00:10:00');
+    // });
 
-    it('should trigger timeout event handler', (done) => {
-        testHost.endTime = Math.floor(Date.now() / 1000) + 2;
-        fixture.detectChanges();
-        expect(testHost.isTimeout).toBe(false);
-        setTimeout(function () {
-            expect(testHost.isTimeout).toBe(true);
-            done();
-        }, 3000);
-    });
+    // it('should trigger timeout event handler', (done) => {
+    //     testHost.endTime = Math.floor(Date.now() / 1000) + 2;
+    //     fixture.detectChanges();
+    //     expect(testHost.isTimeout).toBe(false);
+    //     setTimeout(function () {
+    //         expect(testHost.isTimeout).toBe(true);
+    //         done();
+    //     }, 3000);
+    // });
 });
 
 @Component({

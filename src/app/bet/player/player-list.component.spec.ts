@@ -50,17 +50,17 @@ describe('PlayerListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create', () => {
+  //   expect(component).toBeTruthy();
+  // });
 
-  it('Player list should content three items', () => {
-    expect(3).toBe(component.players.length);
-  });
+  // it('Player list should content three items', () => {
+  //   expect(3).toBe(component.players.length);
+  // });
 
-  it('should show three user tile element', () => {
-    let userTileEl = fixture.debugElement.queryAllNodes(By.css('app-user-tile'));
-    expect(3).toBe(userTileEl.length);
-  });
+  // it('should show three user tile element', () => {
+  //   let userTileEl = fixture.debugElement.queryAllNodes(By.css('app-user-tile'));
+  //   expect(3).toBe(userTileEl.length);
+  // });
 
 });
